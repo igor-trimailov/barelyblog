@@ -1,0 +1,1 @@
+BarelyBlog is barely a blog and is names as such.
