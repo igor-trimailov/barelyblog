@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react'
-
 function useFetch(url) {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
 
   async function fetchUrl() {
-    const response = await fetchUrl(url)
+    const response = await fetch(url)
     const json = await response.json()
-
     setData(json)
     setLoading(false)
   }
@@ -18,5 +16,4 @@ function useFetch(url) {
 
   return [data, loading]
 }
-
 export { useFetch }
