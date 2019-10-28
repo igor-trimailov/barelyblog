@@ -19,7 +19,7 @@ function App() {
       <div>Status: {data.status}</div>
       <div>Message: {data.message}</div>
       <ul>
-        {data.users.map(item => (
+        {data.data.users.map(item => (
           <li key={item.name}>{item.name}</li>
         ))}
       </ul>
