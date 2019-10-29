@@ -1,0 +1,59 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["flowtype", "import", "jsx-a11y", "react"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:flowtype/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "rules": {
+    "array-callback-return": "error",
+    "class-methods-use-this": "error",
+    "curly": "error",
+    "dot-notation": "error",
+    "eqeqeq": "error",
+    "new-cap": "error",
+    "no-loop-func": "error",
+    "no-multi-assign": "error",
+    "no-new-func": "error",
+    "no-new-object": "error",
+    "no-new-wrappers": "error",
+    "no-plusplus": "error",
+    "no-script-url": 0,
+    "no-underscore-dangle": [
+      "error",
+      {
+        "enforceInMethodNames": true
+      }
+    ],
+    "no-unneeded-ternary": "error",
+    "no-useless-constructor": "error",
+    "no-var": "error",
+    "object-shorthand": "error",
+    "one-var": ["error", "never"],
+    "prefer-const": "error",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "react/jsx-filename-extension": "error",
+    "react/prop-types": "off",
+    "react/prefer-stateless-function": [
+      "error",
+      { "ignorePureComponents": true }
+    ],
+    "react/jsx-boolean-value": "error"
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  }
+}
