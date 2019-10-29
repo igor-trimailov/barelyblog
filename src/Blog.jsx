@@ -1,6 +1,9 @@
-import React, { useCallback, useEffect } from 'react'
+/** @jsx jsx */
+import { useCallback, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {fetchUsers} from './actions'
+
+import { jsx, css } from '@emotion/core'
+import { fetchUsers } from './actions'
 
 function Blog() {
   const counter = useSelector(state => state.counter)
@@ -11,23 +14,31 @@ function Blog() {
 
   const dispatch = useDispatch()
 
-  const incrementCounter = useCallback(
-    () => dispatch({type: 'ADD'}),
-    [dispatch]
-  )
+  const incrementCounter = useCallback(() => dispatch({ type: 'ADD' }), [
+    dispatch,
+  ])
 
   useEffect(() => {
     dispatch(fetchUsers())
   }, [dispatch])
 
-  if(appState.loading) {
+  if (appState.loading) {
     return <div>Loading...</div>
   }
 
-  return (<div>
-    <div>Counter: {counter}</div>
-    <button onClick={incrementCounter}>Add</button>
-  </div>)
+  const style = css({
+    color: 'red',
+    '&:hover': {
+      color: 'green',
+    },
+  })
+
+  return (
+    <div css={style}>
+      <div>Counter: {counter}</div>
+      <button onClick={incrementCounter}>Add</button>
+    </div>
+  )
 }
 
 export default Blog
