@@ -2,8 +2,9 @@
 import { useCallback, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { jsx, css } from '@emotion/core'
+import { jsx, css, Global } from '@emotion/core'
 import { fetchUsers } from './actions'
+import TopNavigation from './ui/components/TopNavigation'
 
 function Blog() {
   const counter = useSelector(state => state.counter)
@@ -26,15 +27,23 @@ function Blog() {
     return <div>Loading...</div>
   }
 
-  const style = css({
-    color: 'red',
-    '&:hover': {
-      color: 'green',
-    },
-  })
-
   return (
-    <div css={style}>
+    <div>
+      <Global
+        styles={css`
+          @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot');
+            src: url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+              url('fonts/icomoon.woff') format('woff'),
+              url('fonts/icomoon.ttf') format('truetype'),
+              url('fonts/icomoon.svg#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+          }
+        `}
+      />
+      <TopNavigation />
       <div>Counter: {counter}</div>
       <button onClick={incrementCounter}>Add</button>
     </div>

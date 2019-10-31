@@ -11,14 +11,14 @@ export function error(error) {
 
 export function requestUsers() {
   return {
-    type: 'REQUEST_USERS'
+    type: 'REQUEST_USERS',
   }
 }
 
 export function receiveUsers(users) {
   return {
     type: 'RECEIVE_USERS',
-    payload: users
+    payload: users,
   }
 }
 
@@ -27,9 +27,8 @@ export function fetchUsers() {
     // dispatch an action to initiate loading screens
     dispatch(requestUsers())
 
-    // return fetch('https://stark-brushlands-58685.herokuapp.com/users/show/')
-    return fetch('https://sv443.net/jokeapi/category/Programming?blacklistFlags=nsfw')
-    
+    // todo move api to package.json under DEV env
+    return fetch('https://stark-brushlands-58685.herokuapp.com/users/show/')
       .then(
         response => response.json(),
         error => console.log('An errro occured', error)
