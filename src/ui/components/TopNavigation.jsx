@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx, css } from '@emotion/core'
-import icons from '../emotion/icons'
+import icons from '../theme/icons'
+import theme from '../theme'
 
 // will need to track logged in status here somehow and show appropriate logged in status
 // logo on the left, menu on the right
@@ -96,7 +97,7 @@ function TopNavigation() {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    background: #6852a8;
+    background: ${theme.background.primary};
   `
   return (
     <div css={navigationStyle}>
