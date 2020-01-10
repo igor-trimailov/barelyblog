@@ -9,9 +9,6 @@ import TopNavigation from './ui/components/TopNavigation'
 function Blog() {
   const counter = useSelector(state => state.counter)
   const appState = useSelector(state => state.appState)
-  const users = useSelector(state => state.users)
-
-  console.log(users)
 
   const dispatch = useDispatch()
 

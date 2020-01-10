@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
 import { ActionTypes } from '../actions'
 
+import user from './user'
+
 function counter(state = 0, action) {
   switch (action.type) {
     case 'ADD':
@@ -34,7 +36,7 @@ function appState(
 }
 
 function users(state = [], action) {
-  console.warn(action.payload)
+  // console.warn(action.payload)
   switch (action.type) {
     case 'REQUEST_USERS':
       return []
@@ -45,14 +47,18 @@ function users(state = [], action) {
   }
 }
 
-function errors(state = [], action) {
+// TODO: refactor errors, this does not make sense
+function errors(state = {}, action) {
   switch (action.type) {
-    case ActionTypes.ERROR:
-      return [...state, action.payload]
+    case ActionTypes.ERROR: {
+      return {
+        ...action.payload,
+      }
+    }
 
     default:
       return state
   }
 }
 
-export default combineReducers({ counter, appState, users, errors })
+export default combineReducers({ counter, appState, user, users, errors })

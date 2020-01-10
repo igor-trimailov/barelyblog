@@ -1,3 +1,3 @@
 export default {
-  glass: '\\e9a0',
+  wine_glass: '\\e9a0',
 }

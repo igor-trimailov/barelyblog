@@ -1,6 +1,9 @@
 import config from '../../configuration'
 import { THEME } from '../../constants'
 
+// will describe colors here, they will be populated in each component
+// TODO: shared components should live in jsx of their own
+// TODO: overrides of specific shared components? is there a way to merge css?
 const themeLight = {
   background: {
     primary: '#6852A8',
@@ -15,7 +18,7 @@ const themeDark = {
     primary: 'grey',
   },
   color: {
-    primary: 'white',
+    primary: '#ccc',
   },
 }
 

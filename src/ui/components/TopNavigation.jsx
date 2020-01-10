@@ -6,7 +6,6 @@ import theme from '../theme'
 
 // will need to track logged in status here somehow and show appropriate logged in status
 // logo on the left, menu on the right
-
 function Logo() {
   const logoStyle = css`
     color: white;
@@ -17,7 +16,7 @@ function Logo() {
       font-weight: 700;
       margin-right: 3px;
       font-family: 'icomoon';
-      content: "${icons.glass}"
+      content: "${icons.wine_glass}"
     }
   `
   return <div css={logoStyle}>BarelyBlog</div>
